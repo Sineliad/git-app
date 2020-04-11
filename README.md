@@ -1,34 +1,43 @@
 ## TYPESCRIPT
 
-npx create-react-app my-app --template typescript
+`npx create-react-app my-app --template typescript`
 
 ## BOOTSTRAPT
 
-npm install react-bootstrap bootstrap
+`npm install react-bootstrap bootstrap`
 
+<br />
 En App.tsx
-import "bootstrap/dist/css/bootstrap.min.css";
+
+`import "bootstrap/dist/css/bootstrap.min.css";`
 
 ## REDUX-SAGA
 
-npm install redux react-redux --save
+`npm install redux react-redux --save`
 
-npm install @types/react-redux
+`npm install @types/react-redux`
 
+<br />
 //chrome dev tool redux
 
-npm install --save redux-devtools-extension
+`npm install --save redux-devtools-extension`
 
-import { devToolsEnhancer } from "redux-devtools-extension";
-
-//const store = createStore(rootReducer, defaultState);
-
-const store = createStore(
-rootReducer,
-defaultState,
-devToolsEnhancer()
-// Specify custom devTools options
-);
+import { createStore, compose } from "redux";
+<br />
+// import the root reducer
+import rootReducer from "./reducers";
+<br />
+declare global {
+interface Window {
+**REDUX_DEVTOOLS_EXTENSION_COMPOSE**?: typeof compose;
+}
+}
+<br />
+const composeEnhancers = window.**REDUX_DEVTOOLS_EXTENSION_COMPOSE** || compose;
+<br />
+const store = createStore(rootReducer, composeEnhancers());
+<br />
+export default store;
 
 ### REDUX-SAGA
 
