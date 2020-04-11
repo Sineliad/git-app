@@ -11,7 +11,7 @@ En App.tsx
 
 `import "bootstrap/dist/css/bootstrap.min.css";`
 
-## REDUX-SAGA
+## REDUX
 
 `npm install redux react-redux --save`
 
@@ -22,22 +22,24 @@ En App.tsx
 
 `npm install --save redux-devtools-extension`
 
+```
 import { createStore, compose } from "redux";
-<br />
+
 // import the root reducer
 import rootReducer from "./reducers";
-<br />
+
 declare global {
 interface Window {
 **REDUX_DEVTOOLS_EXTENSION_COMPOSE**?: typeof compose;
 }
 }
-<br />
+
 const composeEnhancers = window.**REDUX_DEVTOOLS_EXTENSION_COMPOSE** || compose;
-<br />
+
 const store = createStore(rootReducer, composeEnhancers());
-<br />
+
 export default store;
+```
 
 ### REDUX-SAGA
 
