@@ -12,11 +12,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 ## REDUX-SAGA
 
 npm install redux react-redux --save
+
 npm install @types/react-redux
+
 //chrome dev tool redux
+
 npm install --save redux-devtools-extension
+
 import { devToolsEnhancer } from "redux-devtools-extension";
+
 //const store = createStore(rootReducer, defaultState);
+
 const store = createStore(
 rootReducer,
 defaultState,
