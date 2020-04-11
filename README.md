@@ -1,3 +1,66 @@
+## TYPESCRIPT
+
+npx create-react-app my-app --template typescript
+
+## BOOTSTRAPT
+
+npm install react-bootstrap bootstrap
+
+En App.tsx
+import "bootstrap/dist/css/bootstrap.min.css";
+
+## REDUX-SAGA
+
+npm install redux react-redux --save
+npm install @types/react-redux
+//chrome dev tool redux
+npm install --save redux-devtools-extension
+import { devToolsEnhancer } from "redux-devtools-extension";
+//const store = createStore(rootReducer, defaultState);
+const store = createStore(
+rootReducer,
+defaultState,
+devToolsEnhancer()
+// Specify custom devTools options
+);
+
+### REDUX-SAGA
+
+npm install redux-saga --save
+
+## HOOKS
+
+### REDUX
+
+import { useSelector, useDispatch } from "react-redux";
+const store: any = useSelector(store => store);
+const dispatch = useDispatch();
+<Button onClick={() => dispatch({ type: "GET_PEOPLE", peopleId: 1 })}>
+Action GET_PEOPLE
+</Button>
+
+## AXIOS
+
+npm install axios --save
+
+## TESTING -> cypress, jest, react-testing-library
+
+### cypress
+
+npm install cypress --save-dev
+Open cypress: npx cypress open
+
+### jest and
+
+yarn add @types/jest react-testing-library
+npm install --save-dev @testing-library/react react-test-renderer @testing-library/jest-dom
+npm run test
+
+## ROUTER
+
+npm install react-router-dom
+npm install @types/react-router-dom --save
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
