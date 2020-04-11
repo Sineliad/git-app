@@ -43,22 +43,42 @@ export default store;
 
 ### REDUX-SAGA
 
-npm install redux-saga --save
+`npm install redux-saga --save`
 
-## HOOKS
+```
+import { createStore, compose, applyMiddleware } from "redux";
+// import the root reducer
+import rootReducer from "./reducers";
+import createSagaMiddleware from "redux-saga";
 
-### REDUX
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
 
-import { useSelector, useDispatch } from "react-redux";
-const store: any = useSelector(store => store);
-const dispatch = useDispatch();
-<Button onClick={() => dispatch({ type: "GET_PEOPLE", peopleId: 1 })}>
-Action GET_PEOPLE
-</Button>
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(sagaMiddleware))
+);
+
+export default store;
+```
 
 ## AXIOS
 
-npm install axios --save
+`npm install axios --save`
+
+```
+import axios from "axios";
+
+export default axios.create({ baseURL: "https://api.github.com/" });
+
+```
 
 ## TESTING -> cypress, jest, react-testing-library
 
