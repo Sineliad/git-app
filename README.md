@@ -82,16 +82,22 @@ export default axios.create({ baseURL: "https://api.github.com/" });
 
 ## TESTING -> cypress, jest, react-testing-library
 
+### jest and react-testing-library
+
+`yarn add @types/jest react-testing-library`
+
+`npm install --save-dev @testing-library/react`
+
+`npm install --save-dev react-test-renderer @testing-library/jest-dom`
+
+`npm run test`
+
 ### cypress
 
-npm install cypress --save-dev
-Open cypress: npx cypress open
+`npm install cypress --save-dev`
 
-### jest and
-
-yarn add @types/jest react-testing-library
-npm install --save-dev @testing-library/react react-test-renderer @testing-library/jest-dom
-npm run test
+Open cypress:
+`npx cypress open`
 
 ## ROUTER
 
