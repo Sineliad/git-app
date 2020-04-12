@@ -1,12 +1,42 @@
+import { Repo } from "../../types";
+import { ActionType } from "typesafe-actions";
+import * as actions from "../actions";
+
+type AppActions = ActionType<typeof actions>;
+
+interface AppState {
+  readonly loading: boolean;
+  readonly error?: object | boolean;
+  readonly username: string;
+  readonly repos: Repo[];
+}
+
 const initialState = {
+  loading: false,
+  error: false,
+  username: "",
   repos: [],
 };
 
-function repositories(state = initialState, action: any) {
+function repositories(state: AppState = initialState, action: AppActions) {
+  console.log("action: ", action);
   switch (action.type) {
     case "GET_REPOS":
-      console.log("GET_REPOS: ", action);
-      return { ...state, repos: action.data };
+      return {
+        ...state,
+        username: action.payload.username,
+        loading: true,
+        error: false,
+      };
+    case "GET_REPOS_SUCCESS":
+      return {
+        ...state,
+        repos: action.payload.repos,
+        loading: false,
+        error: false,
+      };
+    case "GET_REPOS_FAIL":
+      return { ...state, loading: false, error: action.payload.error };
     default:
       return state;
   }
