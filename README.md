@@ -90,11 +90,45 @@ export default axios.create({ baseURL: "https://api.github.com/" });
 
 `npm install --save-dev react-test-renderer @testing-library/jest-dom`
 
+Test Example App.test.tsx
+
+```
+import React from 'react';
+import { render } from '@testing-library/react';
+import App from './App';
+
+test("renders learn react link", () => {
+  const { getByText, debug } = render(<App />);
+  const linkElement = getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+  debug();
+});
+```
+
 `npm run test`
 
 ### cypress
 
 `npm install cypress --save-dev`
+
+Configure Cypress
+
+```
+{
+  "baseUrl": "http://localhost:3000"
+}
+```
+
+Cypress Test Example app.spec.js
+
+```
+describe("App Page", () => {
+  it("Render Learn react Link", () => {
+    cy.visit("/");
+    cy.get("a").should("have.text", "Learn React");
+  });
+});
+```
 
 Open cypress:
 `npx cypress open`
