@@ -28,7 +28,8 @@ function App() {
               </Route>
             </Switch>
           </Router>
-
+          <br />
+          <br />
           <a
             className="App-link"
             href="https://reactjs.org"
