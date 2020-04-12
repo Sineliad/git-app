@@ -1,28 +1,22 @@
-import React from "react";
-import { Form, Button, Spinner } from "react-bootstrap";
+import React, { useState } from "react";
+import RepoForm from "../../components/RepoForm";
 
 function HomePage() {
+  const [username, setUsername] = useState("");
+  const onSubmitForm = (evt?: any) => {
+    if (evt !== undefined && evt.preventDefault) {
+      evt.preventDefault();
+    }
+    console.log("username: ", username);
+  };
+  const onChangeUsername = (evt?: any) => setUsername(evt.target.value);
   return (
     <>
-      <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Obtener Repositorios de Git de @</Form.Label>
-          <Form.Control size="lg" type="text" placeholder="Git username" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Enviar
-        </Button>
-        <Button variant="primary" disabled>
-          <Spinner
-            as="span"
-            animation="grow"
-            size="sm"
-            role="status"
-            aria-hidden="true"
-          />
-          Enviando...
-        </Button>
-      </Form>
+      <RepoForm
+        onSubmit={onSubmitForm}
+        username={username}
+        onChangeUsername={onChangeUsername}
+      />
     </>
   );
 }
