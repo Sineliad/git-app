@@ -107,7 +107,7 @@ test("renders learn react link", () => {
 
 `npm run test`
 
-### cypress
+### CYPRESS
 
 `npm install cypress --save-dev`
 
@@ -135,8 +135,11 @@ Open cypress:
 
 ## ROUTER
 
-npm install react-router-dom
-npm install @types/react-router-dom --save
+`npm install react-router-dom`
+
+`npm install @types/react-router-dom --save`
+
+## -------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
