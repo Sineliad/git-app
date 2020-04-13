@@ -1,10 +1,12 @@
 import { action } from "typesafe-actions";
 import { Repo } from "../../types";
+import ActionTypes from "../constants";
 
-export const getRepos = (username: string) => action("GET_REPOS", { username });
+export const getRepos = (username: string) =>
+  action(ActionTypes.GET_REPOS, { username });
 
 export const getReposSuccess = (repos: Repo) =>
-  action("GET_REPOS_SUCCESS", { repos });
+  action(ActionTypes.GET_REPOS_SUCCESS, { repos });
 
 export const getReposFail = (error: object) =>
-  action("GET_REPOS_FAIL", { error });
+  action(ActionTypes.GET_REPOS_FAIL, { error });

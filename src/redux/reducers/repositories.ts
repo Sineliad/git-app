@@ -1,6 +1,7 @@
 import { Repo } from "../../types";
 import { ActionType } from "typesafe-actions";
 import * as actions from "../actions";
+import ActionTypes from "../constants";
 
 type AppActions = ActionType<typeof actions>;
 
@@ -21,21 +22,21 @@ const initialState = {
 function repositories(state: AppState = initialState, action: AppActions) {
   console.log("action: ", action);
   switch (action.type) {
-    case "GET_REPOS":
+    case ActionTypes.GET_REPOS:
       return {
         ...state,
         username: action.payload.username,
         loading: true,
         error: false,
       };
-    case "GET_REPOS_SUCCESS":
+    case ActionTypes.GET_REPOS_SUCCESS:
       return {
         ...state,
         repos: action.payload.repos,
         loading: false,
         error: false,
       };
-    case "GET_REPOS_FAIL":
+    case ActionTypes.GET_REPOS_FAIL:
       return { ...state, loading: false, error: action.payload.error };
     default:
       return state;
