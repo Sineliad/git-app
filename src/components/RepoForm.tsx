@@ -5,6 +5,7 @@ export interface Props {
   onSubmit(): void;
   username?: string;
   onChangeUsername(): void;
+  loading: boolean;
 }
 
 function RepoForm(props: Props) {
@@ -21,18 +22,17 @@ function RepoForm(props: Props) {
             onChange={props.onChangeUsername}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" disabled={props.loading}>
+          {props.loading && (
+            <Spinner
+              as="span"
+              animation="grow"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            />
+          )}
           Enviar
-        </Button>
-        <Button variant="primary" type="submit" disabled>
-          <Spinner
-            as="span"
-            animation="grow"
-            size="sm"
-            role="status"
-            aria-hidden="true"
-          />
-          Enviando...
         </Button>
       </Form>
     </>
