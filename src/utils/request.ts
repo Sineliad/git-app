@@ -1,3 +1,5 @@
+import axios from "../axios";
+
 export class ResponseError extends Error {
   public response: Response;
 
@@ -47,9 +49,29 @@ function checkStatus(response: Response) {
  */
 export default async function request(
   url: string,
-  options?: RequestInit,
+  options?: RequestInit
 ): Promise<{} | { err: ResponseError }> {
   const fetchResponse = await fetch(url, options);
   const response = await checkStatus(fetchResponse);
   return parseJSON(response);
 }
+
+//request axios axios.get(url, options).then(checkStatus);
+/* interface ResponseAxios {
+  data: [];
+  status: number;
+}
+function parseJSONAxios(response: ResponseAxios) {
+  if (response.status === 204 || response.status === 205) {
+    return null;
+  }
+  return response.json();
+}
+export default async function requestAxios(
+  url: string
+): Promise<{} | { err: ResponseError }> {
+  const fetchResponse: any = await axios.get(url);
+  const response: ResponseAxios = await checkStatus(fetchResponse);
+  console.log(response);
+  return parseJSONAxios(response.data);
+} */
