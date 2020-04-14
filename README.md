@@ -155,6 +155,84 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 ## -------------------------------------------------
 
+## COMANDOS MAC 
+
+### TERMINAL 
+Buscador de Mac -> Buscar Terminal
+`comand + space` 
+<br/>
+Abrir archivo en el editor de texto desde terminal consola
+`sudo open -a TextEdit httpd.conf`
+<br/>
+Nueva pestaña en terminal 
+`comand + t`
+<br/>
+Pasarme entre tabs de la terminal
+`ctrl + tab`
+<br/>
+
+SHORCUTS MAC IMPORTANTES 
+Abrir finder
+`comand + option + space`
+<br/>
+Cerrar aplicación
+`Command + Q`
+
+Buscador encontrar algo
+`Command + F`
+<br/>
+Tomar pantallazos la primera de toda la pantalla y la segunda de una parte:
+`Command + Shift + 3` `Command + Shift + 4` 
+<br/>
+Abrir finder con home
+`Command + Shift + H`
+<br/>
+Abrir finder con Desktop (Applications, Utilities, Desktop, and Home)
+`Command + Shift + D`
+<br/>
+Forzar a cerrar una aplicacón
+`Command + Option + Esc`
+<br/>
+Esconder ventana
+`Command + H`
+
+VISUAL STUDIO CODDE
+`crtl + shift + p` -> correr comandos 
+<br/>
+`crtl + p` -> buscar e instalar 
+<br/>
+`crtl + shift + up` -> seleccionar multiples lineas
+<br/>
+`crtl + d` -> seleccionar palabras iguales
+<br/>
+`alt + shift` + up -> subir linea
+<br/>
+`crtl + /` -> comentar //
+<br/>
+`crtl + ,` -> configuracion
+<br/>
+`crtl + shift + a` -> /* */
+<br/>
+`crtl + shift + k` -> borar linea
+<br/>
+`crtl + g` -> ir a la linea
+<br/>
+`alt + up` -> mover linea hacia arriba
+<br/>
+`crtl + shift + i` -> beautify
+
+### Rellenar datos 
+`crtl + shift + p`
+<br/>
+`faker`
+<br/>
+Bookmark
+`ctrl + alt + >`   (next bookmark)
+`ctrl + alt + <`  (prev bookmark)
+<br/>
+
+## -------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
